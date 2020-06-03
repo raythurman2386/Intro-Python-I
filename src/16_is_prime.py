@@ -10,18 +10,22 @@ To find  all the prime numbers less than or equal to a given integer `n` by Erat
   5. When the algorithm terminnates, the numbers remaining not marked in the list are all the primes below n
 """
 
-num = int(input("Find prime numbers up to number: "))
-# num = 30
-starting_num = 2
-list = [num for num in range(starting_num, num + 1)]
+
+def main():
+    num = int(input("Find prime numbers up to number: "))
+    # num = 30
+    starting_num = 2
+    list = [num for num in range(starting_num, num + 1)]
+
+    while starting_num * starting_num <= num:
+        for num in list:
+            if num % starting_num == 0 and not num == 2:
+                list.remove(num)
+
+        starting_num += 1
+
+    print(list)
 
 
-while starting_num * starting_num <= num:
-    for num in list:
-        if num % starting_num == 0 and not num == 2:
-            list.remove(num)
-
-    starting_num += 1
-
-
-print(list)
+if __name__ == '__main__':
+    main()
