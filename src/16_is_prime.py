@@ -16,7 +16,7 @@ starting_num = 2
 list = [num for num in range(starting_num, num + 1)]
 
 
-while starting_num * starting_num < num:
+while starting_num * starting_num <= num:
     for num in list:
         if num % starting_num == 0 and not num == 2:
             list.remove(num)
